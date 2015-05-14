@@ -18,7 +18,7 @@
 
 > Licença
 
-Em breve...
+[![License](https://poser.pugx.org/artesaos/moip/license)](https://packagist.org/packages/artesaos/moip)
 
 ### Package para a API v1 do MoIP (Laravel 4)
 
