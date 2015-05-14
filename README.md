@@ -25,7 +25,7 @@
 
 ### Package para a API v1 do MoIP (Laravel 4)
 
-Para utilizar a primeira versão do package que é integrada com a API v1 do Moip, cofira o [branch v1](https://github.com/SOSTheBlack/moip/tree/v1)
+Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip/tree/v1), este package está integrado somente com a API V1 do MoIP
 
 ## Instalação
 
