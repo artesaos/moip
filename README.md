@@ -6,6 +6,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/artesaos/moip/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/?branch=master)
 [![Code Climate](https://codeclimate.com/github/artesaos/moip/badges/gpa.svg)](https://codeclimate.com/github/artesaos/moip)
 [![Build Status](https://scrutinizer-ci.com/g/artesaos/moip/badges/build.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/build-status/master)
+[![Project Status](http://stillmaintained.com/SOSTheBlack/moip.png)](https://stillmaintained.com/SOSTheBlack/moip)
 
 > Estatísticas
 
