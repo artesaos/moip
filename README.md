@@ -3,7 +3,7 @@
 
 > Estado Atual do Package
 
-Em breve...
+[![Code Climate](https://codeclimate.com/github/artesaos/moip/badges/gpa.svg)](https://codeclimate.com/github/artesaos/moip)
 
 > Estatísticas
 
