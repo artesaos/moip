@@ -49,7 +49,7 @@ Adicionando um novo item no seu provider
     'Illuminate\Foundation\Providers\ArtisanServiceProvider',
     'Illuminate\Auth\AuthServiceProvider',
     ...
-    'Artesaos\Moip\Providers\MoipApiServiceProvider',
+    'Artesaos\Moip\Providers\MoipServiceProvider',
     ...
 ),
 ```
@@ -60,16 +60,19 @@ Adicionando um novo item no seu facade
     'App'        => 'Illuminate\Support\Facades\App',
     'Artisan'    => 'Illuminate\Support\Facades\Artisan',
     ...
-    'Moip'   => 'Artesaos\Moip\Facades\MoipApi',
+    'Moip'   => 'Artesaos\Moip\Facades\Moip',
 ),
 ```
 
 #### Migrações
 Para mover as migrações do moip para a pasta migrations de sua applicação, basta realizar o seguinte comando:
 ```
-php artisan vendor:publish --provider="Artesaos\Moip\Providers\MoipApiServiceProvider" --tag="migrations"
+php artisan vendor:publish --tag=migrations
 ```
+Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final dos comandos anteriores.
+
 
 Para executar as migrações recentemente movidas, basta realizar o comando a baixo:
 ```
 php artisan migrate
+```

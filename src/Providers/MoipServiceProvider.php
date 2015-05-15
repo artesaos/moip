@@ -4,7 +4,7 @@
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 # Artesaos
-use Artesaos\Moip\MoipApi;
+use Artesaos\Moip\Moip;
 
 /**
  * Create a new service provider
@@ -16,7 +16,7 @@ use Artesaos\Moip\MoipApi;
  * @version 2.0.0
  * 
  */
-class MoipApiServiceProvider extends LaravelServiceProvider 
+class MoipServiceProvider extends LaravelServiceProvider 
 {
 
     /**
@@ -53,7 +53,7 @@ class MoipApiServiceProvider extends LaravelServiceProvider
     {
         $this->app->singleton('moipapi', function()
         {
-            return new MoipApi;
+            return new Moip;
         });
     }
 

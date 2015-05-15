@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade as BaseFacade;
  * @version v1.*
  * @license <a href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>
  */
-class MoipApi extends BaseFacade
+class Moip extends BaseFacade
 {
 	/**
 	 * getFacadeAccessor()
