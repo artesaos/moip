@@ -45,7 +45,7 @@ Adicionando um novo item no seu provider
     'Illuminate\Foundation\Providers\ArtisanServiceProvider',
     'Illuminate\Auth\AuthServiceProvider',
     ...
-    'Artesaos\Moip\Providers\MoipServiceProvider',
+    'Artesaos\Moip\Providers\MoipApiServiceProvider',
     ...
 ),
 ```
@@ -56,7 +56,7 @@ Adicionando um novo item no seu facade
     'App'        => 'Illuminate\Support\Facades\App',
     'Artisan'    => 'Illuminate\Support\Facades\Artisan',
     ...
-    'MoipApi'	=> 'Artesaos\Moip\Facades\Moip',
+    'MoipApi'   => 'Artesaos\Moip\Facades\MoipApi',
 ),
 ```
 
