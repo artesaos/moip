@@ -56,7 +56,7 @@ Adicionando um novo item no seu facade
     'App'        => 'Illuminate\Support\Facades\App',
     'Artisan'    => 'Illuminate\Support\Facades\Artisan',
     ...
-    'MoipApi'   => 'Artesaos\Moip\Facades\MoipApi',
+    'Moip'   => 'Artesaos\Moip\Facades\MoipApi',
 ),
 ```
 
