@@ -1,6 +1,9 @@
 <?php namespace Artesaos\Moip\Providers;
 
+# Packages
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+
+# Artesaos
 use Artesaos\Moip\MoipApi;
 
 /**
@@ -68,50 +71,6 @@ class MoipApiServiceProvider extends LaravelServiceProvider
     }
 
     /**
-     * handle Configs
-     * 
-     * @return void
-     * @access private
-     * @package laravel5-package-template
-     * @author Colin Viebrock <colin@viebrock.ca>
-     * @ignore
-     */
-    private function handleConfigs() 
-    {
-        $configPath = __DIR__ . '/../../config/moip.php';
-        $this->publishes([$configPath => config_path('moip.php')]);
-        $this->mergeConfigFrom($configPath, 'moip');
-    }
-
-    /**
-     * handle Translations
-     * 
-     * @return void
-     * @access private
-     * @package laravel5-package-template
-     * @author Colin Viebrock <colin@viebrock.ca>
-     * @ignore
-     */
-    private function handleTranslations() 
-    {
-        $this->loadTranslationsFrom('moip', __DIR__.'/../../lang');
-    }
-
-    /**
-     * handle Views
-     * 
-     * @return void
-     * @access private
-     * @package laravel5-package-template
-     * @author Colin Viebrock <colin@viebrock.ca>
-     * @ignore
-     */
-    private function handleViews() 
-    {
-        $this->loadViewsFrom('moip', __DIR__.'/../../views');
-        $this->publishes([__DIR__.'/../../views' => base_path('resources/views/vendor/moip')]);
-    }
-    /**
      * handle Migrations
      * 
      * @return void
@@ -122,18 +81,5 @@ class MoipApiServiceProvider extends LaravelServiceProvider
     private function handleMigrations() 
     {
         $this->publishes([__DIR__ . '/../../migrations' => base_path('database/migrations')]);
-    }
-    /**
-     * handle Routes
-     * 
-     * @return void
-     * @access private
-     * @package laravel5-package-template
-     * @author Colin Viebrock <colin@viebrock.ca>
-     * @ignore
-     */
-    private function handleRoutes() 
-    {
-        include __DIR__.'/../../routes.php';
     }
 }
