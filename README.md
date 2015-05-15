@@ -23,6 +23,10 @@
 
 [![License](https://poser.pugx.org/artesaos/moip/license)](https://packagist.org/packages/artesaos/moip)
 
+> Tips
+
+<a href="http://zenhub.io" target="_blank"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png" height="18px" alt="Powered by ZenHub"/></a>
+
 ### Package para a API v1 do MoIP (Laravel 4)
 
 Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip/tree/v1), este package está integrado somente com a API V1 do MoIP
