@@ -63,7 +63,7 @@ Adicionando um novo item no seu facade
 #### Migrações
 Para mover as migrações do moip para a pasta migrations de sua applicação, basta realizar o seguinte comando:
 ```
-php artisan vendor:publish --provider="Artesaos\Moip\MoipServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Artesaos\Moip\Providers\MoipApiServiceProvider" --tag="migrations"
 ```
 
 Para executar as migrações recentemente movidas, basta realizar o comando a baixo:
