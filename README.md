@@ -1,78 +1,76 @@
-# Package para a API v2 do MoIP
+# Package para a API v1 do MoIP
 ----------------------
 
 > Estado Atual do Package
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/artesaos/moip/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/?branch=master)
-[![Code Climate](https://codeclimate.com/github/artesaos/moip/badges/gpa.svg)](https://codeclimate.com/github/artesaos/moip)
-[![Build Status](https://scrutinizer-ci.com/g/artesaos/moip/badges/build.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/build-status/master)
-[![Project Status](http://stillmaintained.com/SOSTheBlack/moip.png)](https://stillmaintained.com/SOSTheBlack/moip)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Artesaos/moip/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Artesaos/moip/?branch=master)
+[![Code Climate](https://codeclimate.com/github/Artesaos/moip/badges/gpa.svg)](https://codeclimate.com/github/Artesaos/moip)
+[![Build Status](https://scrutinizer-ci.com/g/Artesaos/moip/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Artesaos/moip/build-status/master)
+[![Project Status](http://stillmaintained.com/Artesaos/moip.png)](https://stillmaintained.com/Artesaos/moip)
 
 > Estatísticas
 
-[![Total Downloads](https://poser.pugx.org/artesaos/moip/downloads)](https://packagist.org/packages/artesaos/moip)
-[![Monthly Downloads](https://poser.pugx.org/artesaos/moip/d/monthly)](https://packagist.org/packages/artesaos/moip)
-[![Daily Downloads](https://poser.pugx.org/artesaos/moip/d/daily)](https://packagist.org/packages/artesaos/moip)
+[![Total Downloads](https://poser.pugx.org/artesaos/moip/downloads.svg)](https://packagist.org/packages/artesaos/moip)
+[![Monthly Downloads](https://poser.pugx.org/artesaos/moip/d/monthly.png)](https://packagist.org/packages/artesaos/moip)
+[![Daily Downloads](https://poser.pugx.org/artesaos/moip/d/daily.png)](https://packagist.org/packages/artesaos/moip)
 
 > Versionamento
 
-[![Latest Stable Version](https://poser.pugx.org/artesaos/moip/v/stable)](https://packagist.org/packages/artesaos/moip)
-[![Latest Unstable Version](https://poser.pugx.org/artesaos/moip/v/unstable)](https://packagist.org/packages/artesaos/moip)
+[![Latest Stable Version](https://poser.pugx.org/artesaos/moip/v/stable.svg)](https://packagist.org/packages/artesaos/moip) 
+[![Latest Unstable Version](https://poser.pugx.org/artesaos/moip/v/unstable.svg)](https://packagist.org/packages/artesaos/moip)
 
 > Licença
 
-[![License](https://poser.pugx.org/artesaos/moip/license)](https://packagist.org/packages/artesaos/moip)
+[![License](https://poser.pugx.org/artesaos/moip/license.svg)](https://packagist.org/packages/artesaos/moip)
 
-> Tips
 
-<a href="http://zenhub.io" target="_blank"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png" height="18px" alt="Powered by ZenHub"/></a>
+Package para integrar o seu sistema com o MoIP. 
+Neste Package está incluso:
 
-### Package para a API v1 do MoIP (Laravel 4)
+- Dados do comprador podendo realizar o checkout tranparente
+- Valores: Total, Desconto, Acréscimo
+- Identificador Único
+- Motivo da Venda
+- Quem ira resceber o pagamento no MoIP
+- Parcelas: Min, Max, Juros por parcela (a.m), se o comprador irá pagar o juros MoIP
+- Comissão: Valor, motivo, se o valor é porcentagem, conta que irá receber a comissão.
+- Boleto: data de vencimento, mensagens do boleto (max 3), logo no boleto
+- Mensagem no checkout (max 3)
+- URL de retorno após finalizar o checkout
+- URL de notificação na qual recebera NASP
+- Formas de pagamento: Cartão de crédito e débito, boleto, financiamento, debito em conta
 
-Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), este package está integrado somente com a API V1 do MoIP
+Fazer tudo isso é simples... Muito simples.
 
-## Instalação
-
-#### Composer
-
-Comece adicionando o package no require do seu composer.json
+No terminal
 ```
-composer require artesao/moip 1.0.*@dev
-```
-
-Tendo as dependências carregadas e instaladas em seu projeto, vamos adicionar o ServiceProvider e o facade.
-
-#### ServiceProvider
-Adicionando um novo item no seu provider
-```
-'providers' => array(
-    'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-    'Illuminate\Auth\AuthServiceProvider',
-    ...
-    'Artesaos\Moip\Providers\MoipServiceProvider',
-    ...
-),
-```
-#### Facade
-Adicionando um novo item no seu facade
-```
-'aliases' => array(
-    'App'        => 'Illuminate\Support\Facades\App',
-    'Artisan'    => 'Illuminate\Support\Facades\Artisan',
-    ...
-    'Moip'   => 'Artesaos\Moip\Facades\Moip',
-),
+php artisan moip:install
 ```
 
-#### Migrações
-Para mover as migrações do moip para a pasta migrations de sua applicação, basta realizar o seguinte comando:
+No seu código
+```php
+MoipApi::postOrder($data);
 ```
-php artisan vendor:publish --tag=migrations
-```
-Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final dos comandos anteriores.
 
+### Retorno
+O método `MoipApi::postOrder($data)` retorna o método `MoipApi::response()`
+```
+stdClass Object
+(
+    [getXML]
+    [replyXML]
+    [token]
+    [url]
+)
+```
 
-Para executar as migrações recentemente movidas, basta realizar o comando a baixo:
-```
-php artisan migrate
-```
+Method | Response
+-------|----------
+MoipApi::response()->getXML | XML que  é enviado
+MoipApi::response()->replyXML | XML de resposta
+MoipApi::response()->token | Token do checkout
+MoipApi::response()->url | URL do checkout
+
+### Documentação
+
+Confira a documentação completa no nosso [Wiki](https://github.com/Artesaos/moip/wiki)
