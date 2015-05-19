@@ -17,12 +17,12 @@ class Moip
 	 *
 	 * @var string
 	 **/
-	private $moip;
+	private $moip_db;
 
 	/**
 	 * Initialize class
 	 */
 	public function __construct() {
-		$this->moip = App::make('Artesaos\Moip\Model\Moip');
+		$this->moip_db = App::make('Artesaos\Moip\Model\Moip');
 	}
 }
