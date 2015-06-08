@@ -74,3 +74,7 @@ MoipApi::response()->url | URL do checkout
 ### Documentação
 
 Confira a documentação completa no nosso [Wiki](https://github.com/Artesaos/moip/wiki)
+
+### Vídeo
+
+[![MoIP](https://avatars1.githubusercontent.com/u/11164074?v=3&s=200)](https://www.youtube.com/watch?v=nDUQCNWTups)
