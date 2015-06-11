@@ -1,13 +1,10 @@
 <?php namespace Artesaos\Moip\Providers;
 
 # Packages
-use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 # Artesaos
 use Artesaos\Moip\Moip;
-use Artesaos\Moip\Model\Moip as MoipData;
-use Artesaos\Moip\Repositories\Moip\MoipEloquent;
-use Artesaos\Moip\Repositories\Moip\MoipServiceProvider as MoipEloquentServiceProvider;
 
 /**
  * Create a new service provider
@@ -19,7 +16,7 @@ use Artesaos\Moip\Repositories\Moip\MoipServiceProvider as MoipEloquentServicePr
  * @version 2.0.0
  * 
  */
-class MoipServiceProvider extends LaravelServiceProvider 
+class MoipServiceProvider extends ServiceProvider 
 {
 
     /**
@@ -56,7 +53,7 @@ class MoipServiceProvider extends LaravelServiceProvider
     {
         $this->app->singleton('moipapi', function($app)
         {
-            return new Moip($app);
+            return $app->make(Moip::class);
         });
 
     }
