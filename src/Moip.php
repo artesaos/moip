@@ -1,7 +1,11 @@
 <?php namespace Artesaos\Moip;
 
-# Aliases
-use App;
+# Illuminate
+use Illuminate\Container\Container as Application;
+use Illuminate\Database\Eloquent\Model;
+
+# Artesaos
+use Artesaos\Moip\Repositories\Moip\MoipEloquent;
 
 /**
  * Responsible class by integration methods
@@ -15,14 +19,23 @@ class Moip
 	/**
 	 * The table associated with the Moip model.
 	 *
-	 * @var string
+	 * @var Artesaos\Moip\Repositories\Moip\MoipEloquent
 	 **/
-	private $moip_db;
+	private $moip_data;
+
+    /**
+     * The IoC
+     * 
+     * @var Illuminate\Container\Container
+     */
+    protected $app;
 
 	/**
 	 * Initialize class
 	 */
-	public function __construct() {
-		$this->moip_db = App::make('Artesaos\Moip\Model\Moip');
+	public function __construct(Application $app) 
+	{
+		$this->app       = $app;
+		$this->moip_data = $this->app->make(MoipEloquent::class);
 	}
 }
