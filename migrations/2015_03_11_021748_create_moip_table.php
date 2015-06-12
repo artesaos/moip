@@ -16,7 +16,9 @@ class CreateMoipTable extends Migration {
 			$table->increments('id');
 			$table->string('token', 32)->comment('Access token');
 			$table->string('key', 40)->comment('Passkey');
-			$table->string('endpoint', 20)->comment('Performance environment');
+			$table->boolean('environment')
+				->default(0)
+				->comment('Development environment. 0 to 1 to sandbox and production');
 			$table->timestamps();
 		});
 	}
