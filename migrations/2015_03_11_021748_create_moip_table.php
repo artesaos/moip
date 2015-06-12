@@ -30,5 +30,4 @@ class CreateMoipTable extends Migration {
 	{
 		Schema::drop('moip');
 	}
-
 }

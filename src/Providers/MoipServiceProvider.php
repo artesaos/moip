@@ -1,11 +1,12 @@
-<?php namespace Artesaos\Moip\Providers;
+<?php
+
+namespace Artesaos\Moip\Providers;
 
 use Artesaos\Moip\Moip;
 use Illuminate\Support\ServiceProvider;
 
-class MoipServiceProvider extends ServiceProvider 
+class MoipServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -15,26 +16,22 @@ class MoipServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap the application events.
-     *
-     * @return void
      */
-    public function boot() 
+    public function boot()
     {
         $this->handleMigrations();
     }
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
-    public function register() 
+    public function register()
     {
-        $this->app->singleton('moipapi', function($app)
-        {
-            return $app->make(Moip::class);
-        });
+        $this->app->singleton('moipapi', function ($app) {
 
+            return $app->make(Moip::class);
+
+        });
     }
 
     /**
@@ -42,18 +39,16 @@ class MoipServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides() 
+    public function provides()
     {
         return [];
     }
 
     /**
-     * handle Migrations
-     * 
-     * @return void
+     * handle Migrations.
      */
-    private function handleMigrations() 
+    private function handleMigrations()
     {
-        $this->publishes([__DIR__ . '/../../migrations' => base_path('database/migrations')]);
+        $this->publishes([__DIR__.'/../../migrations' => base_path('database/migrations')]);
     }
 }
