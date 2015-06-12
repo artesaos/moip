@@ -48,10 +48,10 @@ Tendo as dependências carregadas e instaladas em seu projeto, vamos adicionar o
 Adicionando um novo item no seu provider
 ```
 'providers' => array(
-    'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-    'Illuminate\Auth\AuthServiceProvider',
+    Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
+    Illuminate\Auth\AuthServiceProvider::class,
     ...
-    'Artesaos\Moip\Providers\MoipServiceProvider',
+    Artesaos\Moip\Providers\MoipServiceProvider::class,
     ...
 ),
 ```
@@ -59,10 +59,10 @@ Adicionando um novo item no seu provider
 Adicionando um novo item no seu facade
 ```
 'aliases' => array(
-    'App'        => 'Illuminate\Support\Facades\App',
-    'Artisan'    => 'Illuminate\Support\Facades\Artisan',
-    ...
-    'Moip'   => 'Artesaos\Moip\Facades\Moip',
+	'App'     => Illuminate\Support\Facades\App::class,
+	'Artisan' => Illuminate\Support\Facades\Artisan::class,
+	...
+	'Moip'    => Artesaos\Moip\Facades\Moip::class,
 ),
 ```
 
