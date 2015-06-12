@@ -13,6 +13,6 @@ class Moip extends BaseFacade
      */
     protected static function getFacadeAccessor()
     {
-        return 'moipapi';
+        return 'moip';
     }
 }

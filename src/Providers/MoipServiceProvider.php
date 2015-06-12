@@ -27,11 +27,7 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('moipapi', function ($app) {
-
-            return $app->make(Moip::class);
-
-        });
+        $this->app->singleton('moip', Moip::class);
     }
 
     /**

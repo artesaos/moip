@@ -30,4 +30,9 @@ class Moip
         $this->app = $app;
         $this->moip_data = $this->app->make(MoipEloquent::class);
     }
+
+    public function order()
+    {
+        dd($this->moip_data->first()->toArray());
+    }
 }
