@@ -78,3 +78,7 @@ Para executar as migrações recentemente movidas, basta realizar o comando a ba
 ```
 php artisan migrate
 ```
+
+## Licença
+
+[The MIT License](https://github.com/artesaos/moip/blob/master/LICENSE)
