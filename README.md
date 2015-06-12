@@ -1,5 +1,8 @@
 # Package para a API v2 do MoIP
 ----------------------
+### Package para a API v1 do MoIP (Laravel 4)
+
+Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), este package está integrado somente com a API V1 do MoIP
 
 > Estado Atual do Package
 
@@ -29,9 +32,6 @@
 
 [![License](https://poser.pugx.org/artesaos/moip/license)](https://packagist.org/packages/artesaos/moip)
 
-### Package para a API v1 do MoIP (Laravel 4)
-
-Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), este package está integrado somente com a API V1 do MoIP
 
 ## Instalação
 
