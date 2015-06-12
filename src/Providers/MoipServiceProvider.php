@@ -19,7 +19,7 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->handleMigrations();
+        $this->handleConfigs();
     }
 
     /**
@@ -37,14 +37,15 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [];
+        return ['moip'];
     }
 
     /**
-     * handle Migrations.
+     * Publishes and Merge configs.
      */
-    private function handleMigrations()
+    public function handleConfigs()
     {
-        $this->publishes([__DIR__.'/../../migrations' => base_path('database/migrations')]);
+        $this->publishes([__DIR__.'/../../config/moip.php' => config_path('/artesaos/moip.php')], 'config');
+        $this->mergeConfigFrom(__DIR__.'/../../config/moip.php', config_path('/artesaos/moip.php', 'config'));
     }
 }

@@ -66,17 +66,22 @@ Adicionando um novo item no seu facade
 ),
 ```
 
-#### Migrações
-Para mover as migrações do moip para a pasta migrations de sua applicação, basta realizar o seguinte comando:
+#### Configurações
+Para mover o arquivo de configurações do moip para a pasta de configurações da sua applicação, basta realizar o seguinte comando:
 ```
-php artisan vendor:publish --tag=migrations
+php artisan vendor:publish --tag=config
 ```
-Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final dos comandos anteriores.
+Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final do comando anterior.
+```
+php artisan vendor:publish --tag=config --force
+```
 
+No Seu arquivo `.env`, adicione os seguintes valores
 
-Para executar as migrações recentemente movidas, basta realizar o comando a baixo:
 ```
-php artisan migrate
+MOIP_APPROVED=yourkeyfortheservice
+MOIP_KEY=yourkeyfortheservice
+MOIP_TOKEN=yourtokefortheservice
 ```
 
 ## Licença
