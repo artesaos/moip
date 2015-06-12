@@ -1,19 +1,9 @@
 <?php namespace Artesaos\Moip;
 
-# Illuminate
-use Illuminate\Container\Container as Application;
 use Illuminate\Database\Eloquent\Model;
-
-# Artesaos
 use Artesaos\Moip\Repositories\Moip\MoipEloquent;
+use Illuminate\Container\Container as Application;
 
-/**
- * Responsible class by integration methods
- * 
- * @package Artesaos\Moip
- * @author Jean C. Garcia <jeancesargarcia@gmail.com>
- * @version 2.0.0
- */
 class Moip
 {
 	/**
@@ -32,6 +22,8 @@ class Moip
 
 	/**
 	 * Initialize class
+	 * 
+	 * @return void
 	 */
 	public function __construct(Application $app) 
 	{

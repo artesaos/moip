@@ -1,15 +1,7 @@
 <?php namespace Artesaos\Moip\Repositories\Moip;
 
-# Package Artesaos\Moip
 use Artesaos\Moip\Model\Moip;
 
-/**
- * Eloquent repository for Moip model
- *
- * @package Artesaos\Moip
- * @author Jean C. Garcia <jeancesargarcia@gmail.com>
- * @version 2.0.0
- **/
 class MoipEloquent
 {
 	/**
@@ -24,7 +16,7 @@ class MoipEloquent
 	 * 
 	 * @return  void
 	 */
-	function __construct() 
+	public function __construct(array $sss) 
 	{
 		$this->model = with(Moip::class);
 

@@ -1,6 +1,5 @@
 <?php namespace Artesaos\Moip\Model;
 
-# Aliases
 use Eloquent;
 
 class Moip extends Eloquent
