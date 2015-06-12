@@ -16,7 +16,7 @@ class MoipEloquent
     /**
      * Create a new Eloquent model instance.
      */
-    public function __construct(array $sss)
+    public function __construct()
     {
         $this->model = with(Moip::class);
 
