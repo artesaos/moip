@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'approved' => env('MOIP_APPROVED'),
+	'approved' => env('MOIP_HOMOLOGATED'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return [
 	|--------------------------------------------------------------------------
 	|
 	| Any request to the API must be passed two keys 
-	| key and token the environment configured in "approved"
+	| key and token the environment configured in "homologated"
 	|
 	*/
 	'credentials' => [
