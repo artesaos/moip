@@ -79,7 +79,7 @@ php artisan vendor:publish --tag=config --force
 No Seu arquivo `.env`, adicione os seguintes valores
 
 ```
-MOIP_APPROVED=yourkeyfortheservice
+MOIP_APPROVED=keysapprovedtrueorfalse
 MOIP_KEY=yourkeyfortheservice
 MOIP_TOKEN=yourtokefortheservice
 ```
