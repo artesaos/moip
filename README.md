@@ -10,6 +10,7 @@ Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBla
 [![Code Climate](https://codeclimate.com/github/artesaos/moip/badges/gpa.svg)](https://codeclimate.com/github/artesaos/moip)
 [![Build Status](https://scrutinizer-ci.com/g/artesaos/moip/badges/build.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/build-status/master)
 [![Project Status](http://stillmaintained.com/SOSTheBlack/moip.png)](https://stillmaintained.com/SOSTheBlack/moip)
+[![Codacy Badge](https://www.codacy.com/project/badge/61b5d36f2e544ffea6fa79ae316cc9d6)](https://www.codacy.com/app/jeancesargarcia/moip)
 
 > Estatísticas
 
