@@ -63,6 +63,16 @@ class Moip
 		return $this->moip->orders();
 	}
 
+    /**
+     * Create a new Payment instance.
+     *
+     * @return \Moip\Moip
+     */
+    public function payments()
+    {
+    	return $this->moip->payments();
+    }
+
 	/**
 	 * Get endpoint of request.
 	 * 
