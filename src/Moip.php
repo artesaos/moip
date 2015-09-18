@@ -43,6 +43,16 @@ class Moip
 		return $this->moip->customers();
 	}
 
+    /**
+     * Create a new Entry instance.
+     *
+     * @return \Moip\Moip
+     */
+    public function entries()
+    {
+    	return $this->moip->entries();
+    }
+
 	/**
 	 * Get endpoint of request.
 	 * 
