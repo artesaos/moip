@@ -33,6 +33,16 @@ class Moip
 		$this->moip = $this->app->make(M::class, [$this->app->make(MoipBasicAuth::class, [config('moip.credentials.token'), config('moip.credentials.key')]), $this->getHomologated()]);
 	}
 
+    /**
+     * Create a new Customer instance.
+     *
+     * @return \Moip\Moip
+     */
+	public function customers()
+	{
+		return $this->moip->customers();
+	}
+
 	/**
 	 * Get endpoint of request.
 	 * 
