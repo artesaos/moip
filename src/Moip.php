@@ -73,6 +73,16 @@ class Moip
     	return $this->moip->payments();
     }
 
+    /**
+     * Create a new Multiorders instance.
+     *
+     * @return \Moip\Moip
+     */
+    public function multiorders()
+    {
+    	return $this->moip->multiorders();
+    }
+
 	/**
 	 * Get endpoint of request.
 	 * 
