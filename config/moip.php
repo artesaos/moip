@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'approved' => env('MOIP_HOMOLOGATED'),
+	'homologated' => env('MOIP_HOMOLOGATED', false),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -25,7 +25,7 @@ return [
 	|
 	*/
 	'credentials' => [
-		'key' 	=> env('MOIP_KEY'),
-		'token'	=> env('MOIP_TOKEN')
+		'key' 	=> env('MOIP_KEY', 'ABABABABABABABABABABABABABABABABABABABAB'),
+		'token'	=> env('MOIP_TOKEN', '01010101010101010101010101010101')
 	],
 ];
