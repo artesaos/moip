@@ -53,6 +53,16 @@ class Moip
     	return $this->moip->entries();
     }
 
+    /**
+     * Create a new Order instance.
+     *
+     * @return \Moip\Moip
+     */
+	public function orders()
+	{
+		return $this->moip->orders();
+	}
+
 	/**
 	 * Get endpoint of request.
 	 * 
