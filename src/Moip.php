@@ -8,49 +8,49 @@ use Moip\MoipBasicAuth;
 
 class Moip
 {
-	/**
-	 * The Laravel Application.
-	 *
-	 * @var \Illuminate\Contracts\Foundation\Application
-	 **/
-	private $app;
+    /**
+     * The Laravel Application.
+     *
+     * @var \Illuminate\Contracts\Foundation\Application
+     **/
+    private $app;
 
-	/**
-	 * Class Moip sdk.
-	 *
-	 * @var \Moip\Moip
-	 **/
-	private $moip;
+    /**
+     * Class Moip sdk.
+     *
+     * @var \Moip\Moip
+     **/
+    private $moip;
 
-	/**
-	 * Class constructor.
-	 * 
-	 * @param \Illuminate\Contracts\Foundation\Application $app The Laravel Application.
-	 */
-	public function __construct(Application $app) 
-	{
-		$this->app = $app;
-	}
+    /**
+     * Class constructor.
+     * 
+     * @param \Illuminate\Contracts\Foundation\Application $app The Laravel Application.
+     */
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
 
-	/**
-	 * Start Moip sdk.
-	 */
-	public function start()
-	{
-		$this->moip = $this->app->make(M::class, [$this->app->make(MoipBasicAuth::class, [config('moip.credentials.token'), config('moip.credentials.key')]), $this->getHomologated()]);
+    /**
+     * Start Moip sdk.
+     */
+    public function start()
+    {
+        $this->moip = $this->app->make(M::class, [$this->app->make(MoipBasicAuth::class, [config('moip.credentials.token'), config('moip.credentials.key')]), $this->getHomologated()]);
 
-		return $this;
-	}
+        return $this;
+    }
 
     /**
      * Create a new Customer instance.
      *
      * @return \Moip\Moip
      */
-	public function customers()
-	{
-		return $this->moip->customers();
-	}
+    public function customers()
+    {
+        return $this->moip->customers();
+    }
 
     /**
      * Create a new Entry instance.
@@ -59,7 +59,7 @@ class Moip
      */
     public function entries()
     {
-    	return $this->moip->entries();
+        return $this->moip->entries();
     }
 
     /**
@@ -67,10 +67,10 @@ class Moip
      *
      * @return \Moip\Moip
      */
-	public function orders()
-	{
-		return $this->moip->orders();
-	}
+    public function orders()
+    {
+        return $this->moip->orders();
+    }
 
     /**
      * Create a new Payment instance.
@@ -79,7 +79,7 @@ class Moip
      */
     public function payments()
     {
-    	return $this->moip->payments();
+        return $this->moip->payments();
     }
 
     /**
@@ -89,16 +89,16 @@ class Moip
      */
     public function multiorders()
     {
-    	return $this->moip->multiorders();
+        return $this->moip->multiorders();
     }
 
-	/**
-	 * Get endpoint of request.
-	 * 
-	 * @return \Moip\Moip::ENDPOINT_PRODUCTION|\Moip\Moip::ENDPOINT_SANDBOX
-	 */
-	private function getHomologated()
-	{
-		return config('moip.homologated') === true ? M::ENDPOINT_PRODUCTION : M::ENDPOINT_SANDBOX;
-	}
+    /**
+     * Get endpoint of request.
+     * 
+     * @return \Moip\Moip::ENDPOINT_PRODUCTION|\Moip\Moip::ENDPOINT_SANDBOX
+     */
+    private function getHomologated()
+    {
+        return config('moip.homologated') === true ? M::ENDPOINT_PRODUCTION : M::ENDPOINT_SANDBOX;
+    }
 }
