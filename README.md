@@ -85,6 +85,31 @@ MOIP_TOKEN=yourtokefortheservice
 MOIP_HOMOLOGATED=keyshomologatedtrueorfalse
 ```
 
+#### Usando
+
+```
+$moip = Moip::start();
+
+$customer = $moip->customers()->setOwnId(uniqid())
+                             ->setFullname('Fulano de Tal')
+                             ->setEmail('fulano@email.com')
+                             ->setBirthDate('1988-12-30')
+                             ->setTaxDocument('22222222222')
+                             ->setPhone(11, 66778899)
+                             ->addAddress('BILLING',
+                                          'Rua de teste', 123,
+                                          'Bairro', 'Sao Paulo', 'SP',
+                                          '01234567', 8);
+$order = $moip->orders()->setOwnId(uniqid())
+                        ->addItem('Bicicleta Specialized Tarmac 26 Shimano Alivio', 1, 'uma linda bicicleta', 10000)
+                        ->setCustomer($customer)
+                        ->create();
+
+
+$payment = $order->payments()->setCreditCard(12, 15, '4073020000000002', '123', $customer)
+                             ->execute();
+```
+
 ## Licença
 
 [The MIT License](https://github.com/artesaos/moip/blob/master/LICENSE)
