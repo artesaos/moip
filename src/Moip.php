@@ -30,7 +30,16 @@ class Moip
 	public function __construct(Application $app) 
 	{
 		$this->app = $app;
+	}
+
+	/**
+	 * Start Moip sdk.
+	 */
+	public function start()
+	{
 		$this->moip = $this->app->make(M::class, [$this->app->make(MoipBasicAuth::class, [config('moip.credentials.token'), config('moip.credentials.key')]), $this->getHomologated()]);
+
+		return $this;
 	}
 
     /**
