@@ -39,7 +39,8 @@ Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBla
 #### Composer
 
 Comece adicionando o package no require do seu composer.json
-```
+
+```shell
 composer require artesao/moip 1.0.0
 ```
 
@@ -47,7 +48,8 @@ Tendo as dependências carregadas e instaladas em seu projeto, vamos adicionar o
 
 #### ServiceProvider
 Adicionando um novo item no seu provider
-```
+
+```php
 'providers' => array(
     Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
     Illuminate\Auth\AuthServiceProvider::class,
@@ -58,7 +60,8 @@ Adicionando um novo item no seu provider
 ```
 #### Facade
 Adicionando um novo item no seu facade
-```
+
+```php
 'aliases' => array(
 	'App'     => Illuminate\Support\Facades\App::class,
 	'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -69,11 +72,14 @@ Adicionando um novo item no seu facade
 
 #### Configurações
 Para mover o arquivo de configurações do moip para a pasta de configurações da sua applicação, basta realizar o seguinte comando:
-```
+
+```shell
 php artisan vendor:publish --tag=config
 ```
+
 Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final do comando anterior.
-```
+
+```shell
 php artisan vendor:publish --tag=config --force
 ```
 
@@ -87,7 +93,7 @@ MOIP_HOMOLOGATED=keyshomologatedtrueorfalse
 
 #### Usando
 
-```
+```php
 $moip = Moip::start();
 
 $customer = $moip->customers()->setOwnId(uniqid())
