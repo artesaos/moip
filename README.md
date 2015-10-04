@@ -41,7 +41,7 @@ Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBla
 Comece adicionando o package no require do seu composer.json
 
 ```shell
-composer require artesao/moip 1.0.0
+composer require artesao/moip 2.0.x-dev
 ```
 
 Tendo as dependências carregadas e instaladas em seu projeto, vamos adicionar o ServiceProvider e o facade.
