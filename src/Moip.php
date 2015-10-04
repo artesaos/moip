@@ -37,7 +37,7 @@ class Moip
      */
     public function start()
     {
-        $this->moip = $this->app->make(Api::class, [$this->app->make(MoipBasicAuth::class, [config('moip.credentials.token'), config('moip.credentials.key')]), $this->getHomologated()]);
+        $this->moip = $this->app->make(Api::class, [$this->app->make(MoipBasicAuth::class, [config('artesaos.moip.credentials.token'), config('artesaos.moip.credentials.key')]), $this->getHomologated()]);
 
         return $this;
     }
