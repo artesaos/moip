@@ -2,15 +2,18 @@
 
 namespace Artesaos\Moip\Tests\Providers;
 
-use PHPUnit_Framework_TestCase;
 use Artesaos\Moip\Providers\MoipServiceProvider;
+use Artesaos\Moip\Tests\MoipTestCase;
 use Illuminate\Contracts\Foundation\Application;
 
 /**
 * class testeMoipServiceProvider
 */
-class MoipServiceProviderTest extends PHPUnit_Framework_TestCase
+class MoipServiceProviderTest extends MoipTestCase
 {
+	/**
+	 * Test if provider return moip string
+	 */
 	public function testProvides()
 	{
 		$service_provider = new MoipServiceProvider(Application::class);
