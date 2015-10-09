@@ -1,6 +1,6 @@
 <?php
 
-namespace Artesaos\Moip\Testing;
+namespace Artesaos\Moip\Tests\Providers;
 
 use PHPUnit_Framework_TestCase;
 use Artesaos\Moip\Providers\MoipServiceProvider;
