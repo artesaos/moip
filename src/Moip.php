@@ -45,7 +45,7 @@ class Moip
     /**
      * Create a new Customer instance.
      *
-     * @return \Moip\Moip
+     * @return \Moip\Resource\Customer
      */
     public function customers()
     {
@@ -55,7 +55,7 @@ class Moip
     /**
      * Create a new Entry instance.
      *
-     * @return \Moip\Moip
+     * @return \Moip\Resource\Entry
      */
     public function entries()
     {
@@ -65,7 +65,7 @@ class Moip
     /**
      * Create a new Order instance.
      *
-     * @return \Moip\Moip
+     * @return \Moip\Resource\Orders
      */
     public function orders()
     {
@@ -75,7 +75,7 @@ class Moip
     /**
      * Create a new Payment instance.
      *
-     * @return \Moip\Moip
+     * @return \Moip\Resource\Payment
      */
     public function payments()
     {
@@ -85,7 +85,7 @@ class Moip
     /**
      * Create a new Multiorders instance.
      *
-     * @return \Moip\Moip
+     * @return \Moip\Resource\Multiorders
      */
     public function multiorders()
     {
