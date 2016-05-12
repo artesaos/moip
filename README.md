@@ -116,7 +116,7 @@ try {
 
 	dd($payment);
 } catch (Exception $e) {
-	printf($e->__toString());
+	dd($e->__toString());
 }
 ```
 
