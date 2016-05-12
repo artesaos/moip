@@ -26,7 +26,6 @@ Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBla
 > Dicas
 
 <a href="http://zenhub.io" target="_blank"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png" height="18px" alt="Powered by ZenHub"/></a>
-[![Slack Laravel Brasil](http://laravelbrasil.vluzrmos.com.br/badge.svg)](http://laravelbrasil.vluzrmos.com.br)
 
 > Licença
 
