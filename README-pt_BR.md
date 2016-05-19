@@ -45,8 +45,10 @@ Comece adicionando o package no require do seu composer.json
 Tendo as dependências carregadas e instaladas em seu projeto, vamos adicionar o ServiceProvider e o facade.
 
 #### ServiceProvider
-Adicionando um novo item no seu provider
+Você precisa atualizar sua configuração do aplicativo, a fim de registrar o pacote para que ele possa ser carregado pelo Framework
 
+####Laravel
+Basta atualizar o seu arquivo `config/app.php` adicionando o seguinte código no final do seu `serviceproviders`:
 ```php
 'providers' => array(
     Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
@@ -56,6 +58,17 @@ Adicionando um novo item no seu provider
     ...
 ),
 ```
+
+
+#### Lumen
+No arquivo `/bootstrap/app.php` Adicione está linha:
+
+```php
+// file START ommited
+	$app->register(Artesaos\Moip\Providers\MoipServiceProvider::class);
+// file END ommited
+```
+
 #### Facade
 Adicionando um novo item no seu facade
 
@@ -72,13 +85,18 @@ Adicionando um novo item no seu facade
 Para mover o arquivo de configurações do moip para a pasta de configurações da sua applicação, basta realizar o seguinte comando:
 
 ```shell
-php artisan vendor:publish --tag=config
+php artisan vendor:publish
+```
+ou
+
+```shell
+php artisan vendor:publish --provider="Artesaos\Moip\Providers\MoipServiceProvider"
 ```
 
 Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final do comando anterior.
 
 ```shell
-php artisan vendor:publish --tag=config --force
+php artisan vendor:publish --provider="Artesaos\Moip\Providers\MoipServiceProvider" --force
 ```
 
 No Seu arquivo `.env`, adicione os seguintes valores
