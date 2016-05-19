@@ -44,8 +44,11 @@ Start by adding the package to require your composer.json
 
 Having loaded dependencies and installed on your project, we will add ServiceProvider and facade.
 
-#### ServiceProvider
-Adding a new item to your provider
+### ServiceProvider
+You need to update your application configuration in order to register the package so it can be loaded by Framework.
+
+####Laravel
+Just update your `config/app.php` file adding the following code at the end of your `'providers'` section:
 
 ```php
 'providers' => array(
@@ -56,6 +59,17 @@ Adding a new item to your provider
     ...
 ),
 ```
+
+
+#### Lumen
+Go to `/bootstrap/app.php` file and add this line:
+
+```php
+// file START ommited
+	$app->register(Artesaos\Moip\Providers\MoipServiceProvider::class);
+// file END ommited
+```
+
 #### Facade
 Adding a new item on its facade
 
@@ -72,13 +86,18 @@ Adding a new item on its facade
 To move the MoIP settings file to the Settings folder of your application, simply perform the following command:
 
 ```shell
-php artisan vendor:publish --tag=config
+php artisan vendor:publish
+```
+
+or
+```shell
+php artisan vendor:publish --provider="Artesaos\Moip\Providers\MoipServiceProvider"
 ```
 
 If you have already published the files, but for some reason need to override them, add the flag '--force' at the end of the previous command.
 
 ```shell
-php artisan vendor:publish --tag=config --force
+php artisan vendor:publish --provider="Artesaos\Moip\Providers\MoipServiceProvider" --force
 ```
 
 His `.env` file, add the following values
