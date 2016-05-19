@@ -5,6 +5,10 @@
     "homepage": "http://dev.moip.com.br",
     "license": "MIT",
     "type": "libraries",
+    "support": {
+        "issues": "https://github.com/artesaos/moip/issues",
+        "source": "https://github.com/artesaos/moip"
+    },
     "authors": [
         {
             "name": "Jean Cesar Garcia",
