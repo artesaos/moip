@@ -2,6 +2,7 @@
     "name": "artesaos/moip",
     "description": "Integration of MoIP payment intermediary with Laravel 5",
     "keywords": ["moip", "gateway", "payment", "laravel", "checkout", "intermediary"],
+    "homepage": "http://dev.moip.com.br",
     "license": "MIT",
     "type": "libraries",
     "authors": [
