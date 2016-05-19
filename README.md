@@ -1,51 +1,51 @@
-# Package para a API v2 do MoIP
+# Package for API v2 MoIP
 ----------------------
-### Package para a API v1 do MoIP (Laravel 4)
+### Package for MoIP API v1 (Laravel 4)
 
-Para utilizar o package com Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), este package está integrado somente com a API V1 do MoIP
+To use the package with Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), This package is integrated only with the V1 API MoIP
 
-> Estado Atual do Package
+> Current Status Package
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/artesaos/moip/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/?branch=master)
 [![Code Climate](https://codeclimate.com/github/artesaos/moip/badges/gpa.svg)](https://codeclimate.com/github/artesaos/moip)
 [![Build Status](https://scrutinizer-ci.com/g/artesaos/moip/badges/build.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/build-status/master)
 [![Codacy Badge](https://www.codacy.com/project/badge/61b5d36f2e544ffea6fa79ae316cc9d6)](https://www.codacy.com/app/jeancesargarcia/moip)
 
-> Estatísticas
+> Statistics
 
 [![Total Downloads](https://poser.pugx.org/artesaos/moip/downloads)](https://packagist.org/packages/artesaos/moip)
 [![Monthly Downloads](https://poser.pugx.org/artesaos/moip/d/monthly)](https://packagist.org/packages/artesaos/moip)
 [![Daily Downloads](https://poser.pugx.org/artesaos/moip/d/daily)](https://packagist.org/packages/artesaos/moip)
 
-> Versionamento
+> Version
 
 [![Latest Stable Version](https://poser.pugx.org/artesaos/moip/v/stable)](https://packagist.org/packages/artesaos/moip)
 [![Latest Unstable Version](https://poser.pugx.org/artesaos/moip/v/unstable)](https://packagist.org/packages/artesaos/moip)
 
 
-> Dicas
+> Tips
 
 <a href="http://zenhub.io" target="_blank"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png" height="18px" alt="Powered by ZenHub"/></a>
 
-> Licença
+> License
 
 [![License](https://poser.pugx.org/artesaos/moip/license)](https://packagist.org/packages/artesaos/moip)
 
 
-## Instalação
+## Installation
 
 #### Composer
 
-Comece adicionando o package no require do seu composer.json
+Start by adding the package to require your composer.json
 
 ```shell
 "artesaos/moip": "^1.0"
 ```
 
-Tendo as dependências carregadas e instaladas em seu projeto, vamos adicionar o ServiceProvider e o facade.
+Having loaded dependencies and installed on your project, we will add ServiceProvider and facade.
 
 #### ServiceProvider
-Adicionando um novo item no seu provider
+Adding a new item to your provider
 
 ```php
 'providers' => array(
@@ -57,7 +57,7 @@ Adicionando um novo item no seu provider
 ),
 ```
 #### Facade
-Adicionando um novo item no seu facade
+Adding a new item on its facade
 
 ```php
 'aliases' => array(
@@ -68,20 +68,20 @@ Adicionando um novo item no seu facade
 ),
 ```
 
-#### Configurações
-Para mover o arquivo de configurações do moip para a pasta de configurações da sua applicação, basta realizar o seguinte comando:
+#### Settings
+To move the MoIP settings file to the Settings folder of your application, simply perform the following command:
 
 ```shell
 php artisan vendor:publish --tag=config
 ```
 
-Se você já publicou os arquivos, mas por algum motivo precisa sobrescrevê-los, adicione a flag '--force' no final do comando anterior.
+If you have already published the files, but for some reason need to override them, add the flag '--force' at the end of the previous command.
 
 ```shell
 php artisan vendor:publish --tag=config --force
 ```
 
-No Seu arquivo `.env`, adicione os seguintes valores
+His `.env` file, add the following values
 
 ```
 MOIP_KEY=yourkeyfortheservice
@@ -89,14 +89,15 @@ MOIP_TOKEN=yourtokefortheservice
 MOIP_HOMOLOGATED=keyshomologatedtrueorfalse
 ```
 
-## Usando
+## Using
 
 ```php
 $moip = Moip::start();
 ```
 
-#### Criando um comprador
-Nesse exemplo será criado um pedido com dados do cliente - Com endereço de entrega e de pagamento.
+#### Creating a buyer
+
+In this example we will create a request with customer data - With delivery and payment address.
 ```php
 try {
     $customer = $moip->customers()->setOwnId(uniqid())
@@ -119,8 +120,9 @@ try {
     dd($e->__toString());
 }
 ```
-#### Criando um pedido com o comprador que acabamos de criar
-Nesse exemplo com vários produtos e ainda especificando valor de frete, valor adicional e ainda valor de desconto.
+#### Creating an application with the buyer we just created
+
+In this example with various products and also specifying freight value, additional value and further discount amount.
 
 ```php
 try {
@@ -145,9 +147,10 @@ try {
 }
 ```
 
-#### Criando o pagamento
-Após criar o pedido basta criar um pagamento nesse pedido.
-Nesse exemplo estamos pagando com Cartão de Crédito.
+#### Creating payment
+
+After creating the application simply create a payment request.
+In this example we are paying by credit card.
 
 ```php
 try {
@@ -160,10 +163,10 @@ try {
 }
 ```
 
-## Documentação
+## Documentation
 
-[Documentação oficial](https://moip.com.br/referencia-api/)
+[Official documentation](https://moip.com.br/referencia-api/)
 
-## Licença
+## License
 
 [The MIT License](https://github.com/artesaos/moip/blob/master/LICENSE)
