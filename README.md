@@ -119,7 +119,7 @@ try {
     dd($e->__toString());
 }
 ```
-## Criando um pedido com o comprador que acabamos de criar
+#### Criando um pedido com o comprador que acabamos de criar
 Nesse exemplo com vários produtos e ainda especificando valor de frete, valor adicional e ainda valor de desconto.
 
 ```php
@@ -145,7 +145,7 @@ try {
 }
 ```
 
-## Criando o pagamento
+#### Criando o pagamento
 Após criar o pedido basta criar um pagamento nesse pedido.
 Nesse exemplo estamos pagando com Cartão de Crédito.
 
