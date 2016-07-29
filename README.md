@@ -39,7 +39,7 @@ To use the package with Laravel 4 [clique aqui](https://github.com/SOSTheBlack/m
 Start by adding the package to require your composer.json
 
 ```shell
-"artesaos/moip": "^1.0"
+composer require artesaos/moip
 ```
 
 Having loaded dependencies and installed on your project, we will add ServiceProvider and facade.
