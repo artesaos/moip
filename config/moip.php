@@ -9,7 +9,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Define the key and the token has been approved by MoIP
-    | If true, it will use the ambiende production
+    | If true, it will use the production environment
     | If false, it will use the development environment (sandbox)
     |
     */
