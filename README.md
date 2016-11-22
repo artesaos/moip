@@ -184,7 +184,7 @@ try {
 
 ## Documentation
 
-[Official documentation](https://moip.com.br/referencia-api/)
+[Official documentation](http://dev.moip.com.br/referencia-api/)
 
 ## License
 
