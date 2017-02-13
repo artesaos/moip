@@ -53,6 +53,16 @@ class Moip
     }
 
     /**
+     * Create a new Account instance.
+     *
+     * @return \Moip\Resource\Account
+     */
+    public function accounts()
+    {
+        return $this->moip->accounts();
+    }
+
+    /**
      * Create a new Entry instance.
      *
      * @return \Moip\Resource\Entry
