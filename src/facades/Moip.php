@@ -1,6 +1,6 @@
 <?php
 
-namespace Artesaos\Moip\facades;
+namespace Artesaos\Moip\Facades;
 
 use Illuminate\Support\Facades\Facade as BaseFacade;
 
