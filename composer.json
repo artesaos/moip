@@ -19,7 +19,6 @@
         "php": ">=5.5.9",
         "illuminate/config": "~5.1 || ~5.2",
         "illuminate/support": "~5.1 || ~5.2",
-        "moip/moip-sdk-php": "dev-get-payment-status",
         "mockery/mockery": "^0.9.4"
     },
     "require-dev": {
