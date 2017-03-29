@@ -2,19 +2,11 @@
 
 namespace Artesaos\Moip;
 
-use Illuminate\Contracts\Foundation\Application;
 use Moip\Moip as Api;
 use Moip\MoipBasicAuth;
 
 class Moip
 {
-    /**
-     * The Laravel Application.
-     *
-     * @var \Illuminate\Contracts\Foundation\Application
-     **/
-    private $app;
-
     /**
      * Class Moip sdk.
      *
@@ -22,14 +14,9 @@ class Moip
      **/
     private $moip;
 
-    /**
-     * Class constructor.
-     * 
-     * @param \Illuminate\Contracts\Foundation\Application $app The Laravel Application.
-     */
-    public function __construct(Application $app)
+    function __construct()
     {
-        $this->app = $app;
+        $this->moip = new Api(new MoipBasicAuth(config('moip.credentials.token'), config('moip.credentials.key')), $this->getHomologated());
     }
 
     /**
@@ -37,8 +24,6 @@ class Moip
      */
     public function start()
     {
-        $this->moip = $this->app->make(Api::class, [$this->app->make(MoipBasicAuth::class, [config('moip.credentials.token'), config('moip.credentials.key')]), $this->getHomologated()]);
-
         return $this;
     }
 
@@ -50,16 +35,6 @@ class Moip
     public function customers()
     {
         return $this->moip->customers();
-    }
-
-    /**
-     * Create a new Account instance.
-     *
-     * @return \Moip\Resource\Account
-     */
-    public function accounts()
-    {
-        return $this->moip->accounts();
     }
 
     /**
@@ -104,8 +79,8 @@ class Moip
 
     /**
      * Get endpoint of request.
-     * 
-     * @return \Moip\Moip::ENDPOINT_PRODUCTION|\Moip\Moip::ENDPOINT_SANDBOX
+     *
+     * @return string
      */
     private function getHomologated()
     {

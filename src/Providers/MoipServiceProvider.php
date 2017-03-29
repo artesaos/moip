@@ -3,6 +3,8 @@
 namespace Artesaos\Moip\Providers;
 
 use Artesaos\Moip\Moip;
+use Moip\Moip as Api;
+use Moip\MoipBasicAuth;
 use Illuminate\Support\ServiceProvider;
 
 class MoipServiceProvider extends ServiceProvider
@@ -19,15 +21,7 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config_file = __DIR__.'/../../config/moip.php';
-
-        if ($this->isLumen()) {
-            $this->app->configure('moip');
-        } else {
-            $this->publishes([$config_file => config_path('moip.php')]);
-        }
-
-        $this->mergeConfigFrom($config_file, 'moip');
+        $this->handleConfigs();
     }
 
     /**
@@ -35,7 +29,9 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('moip', Moip::class);
+        $this->app->singleton('moip', function(){
+            return new Moip(new Api(new MoipBasicAuth(config('moip.credentials.token'), config('moip.credentials.key')), $this->getHomologated()));
+        });
     }
 
     /**
@@ -49,10 +45,21 @@ class MoipServiceProvider extends ServiceProvider
     }
 
     /**
-     * @return bool
+     * Publishes and Merge configs.
      */
-    private function isLumen()
+    public function handleConfigs()
     {
-        return true === str_contains($this->app->version(), 'Lumen');
+        $this->publishes([__DIR__.'/../../config/moip.php' => config_path('/artesaos/moip.php')], 'config');
+        $this->mergeConfigFrom(__DIR__.'/../../config/moip.php', config_path('/artesaos/moip.php', 'config'));
+    }
+
+    /**
+     * Get endpoint of request.
+     *
+     * @return \Moip\Moip::ENDPOINT_PRODUCTION|\Moip\Moip::ENDPOINT_SANDBOX
+     */
+    private function getHomologated()
+    {
+        return config('moip.homologated') === true ? Api::ENDPOINT_PRODUCTION : Api::ENDPOINT_SANDBOX;
     }
 }
