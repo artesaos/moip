@@ -1,9 +1,5 @@
 # Package for API v2 MoIP
 ----------------------
-### Package for MoIP API v1 (Laravel 4)
-
-To use the package with Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), This package is integrated only with the V1 API MoIP
-
 > Current Status Package
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/artesaos/moip/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/artesaos/moip/?branch=master)
@@ -181,6 +177,10 @@ try {
     dd($e->__toString());
 }
 ```
+
+## Package for MoIP API v1 - Laravel 4
+
+To use the package with Laravel 4 [clique aqui](https://github.com/SOSTheBlack/moip), This package is integrated only with the V1 API MoIP
 
 ## Documentation
 
