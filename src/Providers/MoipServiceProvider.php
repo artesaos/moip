@@ -3,9 +3,13 @@
 namespace Artesaos\Moip\Providers;
 
 use Artesaos\Moip\Moip;
-use Moip\Moip as Api;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class MoipServiceProvider.
+ *
+ * @package Artesaos\Moip\Providers
+ */
 class MoipServiceProvider extends ServiceProvider
 {
     /**
