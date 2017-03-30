@@ -56,7 +56,7 @@ class MoipServiceProvider extends ServiceProvider
     /**
      * Get endpoint of request.
      *
-     * @return \Moip\Moip::ENDPOINT_PRODUCTION|\Moip\Moip::ENDPOINT_SANDBOX
+     * @return \Moip\Moip|string
      */
     private function getHomologated()
     {
