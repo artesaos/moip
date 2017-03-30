@@ -29,6 +29,8 @@ class Moip
 
     /**
      * Start Moip sdk.
+     *
+     * @deprecated
      */
     public function start()
     {
