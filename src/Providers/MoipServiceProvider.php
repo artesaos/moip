@@ -50,7 +50,22 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function handleConfigs()
     {
-        $this->publishes([__DIR__.'/../../config/moip.php' => config_path('/artesaos/moip.php')], 'config');
-        $this->mergeConfigFrom(__DIR__.'/../../config/moip.php', config_path('/artesaos/moip.php', 'config'));
+        $config_file = __DIR__.'/../../config/moip.php';
+
+        if ($this->isLumen()) {
+            $this->app->configure('moip');
+        } else {
+            $this->publishes([$config_file => config_path('moip.php')]);
+        }
+
+        $this->mergeConfigFrom($config_file, 'moip');
+    }
+
+    /**
+     * @return bool
+     */
+    private function isLumen()
+    {
+        return true === str_contains($this->app->version(), 'Lumen');
     }
 }
