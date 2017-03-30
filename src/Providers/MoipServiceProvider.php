@@ -49,14 +49,4 @@ class MoipServiceProvider extends ServiceProvider
         $this->publishes([__DIR__.'/../../config/moip.php' => config_path('/artesaos/moip.php')], 'config');
         $this->mergeConfigFrom(__DIR__.'/../../config/moip.php', config_path('/artesaos/moip.php', 'config'));
     }
-
-    /**
-     * Get endpoint of request.
-     *
-     * @return \Moip\Moip|string
-     */
-    private function getHomologated()
-    {
-        return config('moip.homologated') === true ? Api::ENDPOINT_PRODUCTION : Api::ENDPOINT_SANDBOX;
-    }
 }
