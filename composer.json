@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.0",
         "illuminate/config": "~5.1 || ~5.2 || ~5.3 || ~5.4",
         "illuminate/support": "~5.1 || ~5.2 || ~5.3 || ~5.4",
         "moip/moip-sdk-php": "dev-master"
