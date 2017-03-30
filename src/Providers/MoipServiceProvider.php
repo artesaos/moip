@@ -4,7 +4,6 @@ namespace Artesaos\Moip\Providers;
 
 use Artesaos\Moip\Moip;
 use Moip\Moip as Api;
-use Moip\MoipBasicAuth;
 use Illuminate\Support\ServiceProvider;
 
 class MoipServiceProvider extends ServiceProvider
@@ -29,9 +28,7 @@ class MoipServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('moip', function(){
-            return new Moip(new Api(new MoipBasicAuth(config('moip.credentials.token'), config('moip.credentials.key')), $this->getHomologated()));
-        });
+        $this->app->singleton('moip', Moip::class);
     }
 
     /**
