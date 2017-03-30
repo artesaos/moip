@@ -43,7 +43,7 @@ Having loaded dependencies and installed on your project, we will add ServicePro
 ### ServiceProvider
 You need to update your application configuration in order to register the package so it can be loaded by Framework.
 
-####Laravel
+#### Laravel
 Just update your `config/app.php` file adding the following code at the end of your `'providers'` section:
 
 ```php
