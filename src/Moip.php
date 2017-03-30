@@ -14,6 +14,9 @@ class Moip
      **/
     private $moip;
 
+    /**
+     * Moip constructor.
+     */
     function __construct()
     {
         $this->moip = new Api(new MoipBasicAuth(config('moip.credentials.token'), config('moip.credentials.key')), $this->getHomologated());
