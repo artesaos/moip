@@ -62,6 +62,8 @@ class MoipServiceProvider extends ServiceProvider
     }
 
     /**
+     * Checks if the application is Lumen.
+     *
      * @return bool
      */
     private function isLumen()

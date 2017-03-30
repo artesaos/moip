@@ -5,6 +5,11 @@ namespace Artesaos\Moip;
 use Moip\Moip as Api;
 use Moip\MoipBasicAuth;
 
+/**
+ * Class Moip.
+ *
+ * @package Artesaos\Moip
+ */
 class Moip
 {
     /**
