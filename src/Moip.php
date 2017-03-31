@@ -31,6 +31,16 @@ class Moip
     }
 
     /**
+     * Return a intance of package.
+     *
+     * @return \Moip\Moip
+     */
+    public function getApi()
+    {
+        return $this->moip;
+    }
+
+    /**
      * Start Moip sdk.
      *
      * @deprecated
