@@ -3,7 +3,6 @@
 namespace Artesaos\Moip;
 
 use Moip\Moip as Api;
-use Moip\MoipBasicAuth;
 
 /**
  * Class Moip.
@@ -21,10 +20,14 @@ class Moip
 
     /**
      * Moip constructor.
+     *
+     * @param \Moip\Moip $api
      */
-    function __construct()
+    function __construct(Api $api)
     {
-        $this->moip = new Api(new MoipBasicAuth(config('moip.credentials.token'), config('moip.credentials.key')), $this->getHomologated());
+        $this->moip = $api;
+
+        return $this;
     }
 
     /**
@@ -85,15 +88,5 @@ class Moip
     public function multiorders()
     {
         return $this->moip->multiorders();
-    }
-
-    /**
-     * Get endpoint of request.
-     *
-     * @return string
-     */
-    private function getHomologated()
-    {
-        return config('moip.homologated') === true ? Api::ENDPOINT_PRODUCTION : Api::ENDPOINT_SANDBOX;
     }
 }
