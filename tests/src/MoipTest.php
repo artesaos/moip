@@ -24,4 +24,12 @@ class MoipTest extends AbstractTestCase
     {
         $this->assertInstanceOf(\Moip\Moip::class, $this->moip->getApi());
     }
+
+    /**
+     * @test
+     */
+    public function testInstanceOfCustomers()
+    {
+        $this->assertInstanceOf(\Moip\Resource\Customer::class, $this->moip->customers());
+    }
 }
