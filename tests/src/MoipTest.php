@@ -32,4 +32,36 @@ class MoipTest extends AbstractTestCase
     {
         $this->assertInstanceOf(\Moip\Resource\Customer::class, $this->moip->customers());
     }
+
+    /**
+     * @test
+     */
+    public function testInstanceOfEntries()
+    {
+        $this->assertInstanceOf(\Moip\Resource\Entry::class, $this->moip->entries());
+    }
+
+    /**
+     * @test
+     */
+    public function testInstanceOfOrders()
+    {
+        $this->assertInstanceOf(\Moip\Resource\Orders::class, $this->moip->orders());
+    }
+
+    /**
+     * @test
+     */
+    public function testInstanceOfPayments()
+    {
+        $this->assertInstanceOf(\Moip\Resource\Payment::class, $this->moip->payments());
+    }
+
+    /**
+     * @test
+     */
+    public function testInstanceOfMultiOrders()
+    {
+        $this->assertInstanceOf(\Moip\Resource\Multiorders::class, $this->moip->multiorders());
+    }
 }
