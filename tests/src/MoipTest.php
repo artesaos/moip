@@ -14,6 +14,14 @@ class MoipTest extends AbstractTestCase
      */
     public function testStart()
     {
-        $this->assertEquals($this->moip, $this->moip->start());
+        $this->assertInstanceOf(\Artesaos\Moip\Moip::class, $this->moip->start());
+    }
+
+    /**
+     * @test
+     */
+    public function testPropertyMoip()
+    {
+        $this->assertInstanceOf(\Moip\Moip::class, $this->moip->getApi());
     }
 }
