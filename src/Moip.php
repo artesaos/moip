@@ -51,6 +51,16 @@ class Moip
     }
 
     /**
+     * Create a new Accounts instance.
+     *
+     * @return \Moip\Resource\Account
+     */
+    public function accounts()
+    {
+        return $this->moip->accounts();
+    }
+
+    /**
      * Create a new Customer instance.
      *
      * @return \Moip\Resource\Customer
@@ -98,5 +108,25 @@ class Moip
     public function multiorders()
     {
         return $this->moip->multiorders();
+    }
+
+    /**
+     * Create a new Notifications instance.
+     *
+     * @return \Moip\Resource\NotificationPreferences
+     */
+    public function notifications()
+    {
+        return $this->moip->notifications();
+    }
+
+    /**
+     * Create a new Tranfers instance.
+     *
+     * @return \Moip\Resource\Transfers
+     */
+    public function transfers()
+    {
+        return $this->moip->transfers();
     }
 }
