@@ -4,7 +4,7 @@ namespace Artesaos\Moip\Tests;
 
 use Artesaos\Moip\Moip;
 use Moip\Moip as Api;
-use Moip\MoipBasicAuth;
+use Moip\Auth\BasicAuth;
 use PHPUnit_Framework_TestCase;
 
 /**
@@ -35,6 +35,6 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->moip = new Moip(new Api(new MoipBasicAuth(self::MOIP_KEY, self::MOIP_TOKEN), false));
+        $this->moip = new Moip(new Api(new BasicAuth(self::MOIP_KEY, self::MOIP_TOKEN), false));
     }
 }
