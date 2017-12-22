@@ -5,14 +5,14 @@ namespace Artesaos\Moip\Tests;
 use Artesaos\Moip\Moip;
 use Moip\Moip as Api;
 use Moip\Auth\BasicAuth;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class MoipTestCase.
  *
  * @package Artesaos\Moip\Tests
  */
-abstract class AbstractTestCase extends PHPUnit_Framework_TestCase
+abstract class AbstractTestCase extends TestCase
 {
     /**
      * @const string
