@@ -47,6 +47,5 @@
                 "Moip": "Artesaos\\Moip\\Facades\\Moip"
             }
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
