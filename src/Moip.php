@@ -129,4 +129,14 @@ class Moip
     {
         return $this->moip->transfers();
     }
+
+    /**
+     * Create a new Holder instance.
+     *
+     * @return \Moip\Resource\Holder
+     */
+    public function holders()
+    {
+        return $this->moip->holders();
+    }
 }
